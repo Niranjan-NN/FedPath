@@ -1,0 +1,7 @@
+streamlit
+sqlalchemy
+pymysql
+requests
+folium
+streamlit-folium
+python-dotenv
