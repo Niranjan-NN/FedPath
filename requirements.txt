@@ -1,8 +1,0 @@
-streamlit
-sqlalchemy
-pymysql
-hashlib
-requests
-folium
-streamlit-folium
-python-dotenv
