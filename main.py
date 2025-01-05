@@ -11,6 +11,29 @@ import os
 # Load environment variables from the .env file
 load_dotenv()  # This will load the environment variables
 
+# Validate environment variables for the database connection
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL is not set!")
+
+# For Streamlit Cloud Deployment, use Streamlit secrets if available
+if "DATABASE_URL" in st.secrets:
+    DATABASE_URL = st.secrets["DATABASE_URL"]
+
+# Create the database engine using the connection string
+engine = create_engine(DATABASE_URL)
+
+# Test the database connection
+def test_db_connection():
+    try:
+        with engine.connect() as conn:
+            st.write("Database connection successful!")
+    except Exception as e:
+        st.error(f"Database connection failed: {e}")
+
+# Call the test function to verify the connection when the app starts
+test_db_connection()
+
 # Constants (now retrieved from the .env file)
 TOMTOM_API_KEY = os.getenv("TOMTOM_API_KEY")  # Ensure your API keys are in .env
 AQICN_API_KEY = os.getenv("AQICN_API_KEY")    # Same for this
