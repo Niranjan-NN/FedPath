@@ -1,28 +1,48 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
+*$py.class
 
-# Virtual environment
-venv/
-.env/
-*.env
+# C extensions
+*.so
 
-# Database files
-*.db
+# Environment variables
+.env
 
-# IDE settings (adjust for your IDE)
-.vscode/
-.idea/
+# Devcontainer configuration
+.devcontainer/
 
-# Logs and debug files
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Installed dependencies
+*.egg-info/
+.eggs/
+*.egg
+
+# Distribution / packaging
+*.wheel
+*.egg
+dist/
+build/
+*.spec
+
+# Logs and databases
 *.log
-
-# Cache files
-*.cache
 *.sqlite3
+*.db
+*.sav
 
-# System-specific files
+# GitHub files
 .DS_Store
 Thumbs.db
+
+# IDE or Editor-specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+
+# Local saved files
+saved_routes.json
