@@ -11,6 +11,9 @@ import os
 # Load environment variables from the .env file
 load_dotenv()  # This will load the environment variables
 
+st.write(f"DATABASE_URL: {DATABASE_URL}")
+
+
 # Validate environment variables for the database connection
 DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
